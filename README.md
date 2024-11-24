@@ -9,6 +9,7 @@ Before running the tool, make sure you have the following:
 - **BeautifulSoup4 library**
 
 You can install the required libraries by running:
+
 pip install -r requirements.txt
 
 ## **Installation**
