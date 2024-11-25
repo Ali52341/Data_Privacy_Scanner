@@ -16,6 +16,17 @@ def analyze_privacy_terms(content):
     results = {term: content.lower().count(term) for term in privacy_terms}
     return results
 
+def fetch_website_content(url):
+    try:
+        response = requests.get(url, timeout=10)
+        response.raise_for_status()  # Check HTTP errors
+        #print(response.text)  # Stampa il contenuto della pagina
+        return response.text
+    except requests.exceptions.RequestException as e:
+        print(f"Error during the connection: {e}")
+        return None
+
+
 def main():
     print("Welcome into the Data Privacy Scanner!")
     url = input("Enter the URL to be analyzed (ex. https://example.com): ").strip()
